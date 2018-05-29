@@ -23,26 +23,25 @@ export default class Login extends Component {
 
 onSubmitHandler = (event) => {
   event.preventDefault();
-   // fetch('create-user-route', {
-   //   method: 'POST',
-   //   headers: {
-   //     'Content-Type': 'application/json'
-   //
-   //   },
-   //   body: {
-   //     'username': {this.state.username},
-   //     'password': {this.state.password}
-   //   }
-   //
-   // })
-   // .then(resp => resp.json())
-   // .then(user => console.log(user))
+   fetch('http://localhost:5000/api/v1/users', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       
+     },
+     body: {
+       'username': this.state.username,
+       'password': this.state.password
+     }
+
+   })
+   .then(resp => resp.json())
+   .then(user => console.log(user))
  }
 
 
   render() {
     console.log(this.state.username)
-    console.log(this.state.password)
     return (
 
       <div className='login-layout'>

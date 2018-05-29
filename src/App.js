@@ -10,7 +10,7 @@ class App extends Component {
 state = {
   loginClicked: false,
   gameClicked: false,
-  profileClicked: false
+  profileClicked: false,
 }
 
 handleGameClicked = () => {
@@ -52,13 +52,13 @@ handleGameClicked = () => {
 
   render() {
     if (this.state.gameClicked){
-    return (<GameBoard/>)
-  }else if (this.state.loginClicked){
-    return (<Login/>)
-  }else if (this.state.profileClicked){
-    return (<Profile/>)
-  }else{
-    return(
+      return (<GameBoard/>)
+    }else if (this.state.loginClicked){
+      return (<Login/>)
+    }else if (this.state.profileClicked){
+      return (<Profile/>)
+    }else{
+      return(
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">ONE-HUNNID</h1>
@@ -66,8 +66,8 @@ handleGameClicked = () => {
           <img src='https://thestampedenews.org/wp-content/uploads/2017/09/JVfootball.png' className="App-logo" alt="logo" />
         </header>
           <div className='App-intro'>
-            <p>
           <h2 className="animated pulse infinite">CONGRATULATIONS!</h2>
+          <p>
           You're now a professional NFL Kick-Returner who needs to travel the length of the football field to score the game winning touchdown, while avoiding the toughest Grid-Iron Legends
            </p>
            <button onClick={this.handleLoginClicked}>Sign-Up</button>
