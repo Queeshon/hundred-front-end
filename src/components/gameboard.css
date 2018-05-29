@@ -1,0 +1,104 @@
+.game-layout{
+  border: 2px solid black;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  margin: 2% auto;
+  text-align: center;
+  height: 830px;
+  width: 600px;
+  border-radius: 2pc;
+  text-shadow: 4px 4px black;
+}
+
+#scoreboard{
+  background-image: url('https://www.electro-mech.com/scoreboard-images/lx3340.png');
+  background-size: cover;
+  height: 115px;
+  font-size: 60px
+}
+
+
+#game-score{
+  border: 3px solid white;
+  padding: 5px;
+  border-radius: 2pc;
+  background: rgb(26, 88, 188);
+  text-shadow: 0px 0px;
+}
+#game-time{
+  border: 3px solid white;
+  margin: 50px 0px 0px 345px;
+  padding: 5px;
+  border-radius: 2pc;
+  background: rgb(26, 88, 188);
+  color: white;
+  text-shadow: 0px 0px;
+}
+
+h1{
+  border: 2px solid white;
+  width: 200px;
+  margin: 2% auto;
+  border-radius: 2pc;
+  background: rgb(26, 88, 188);
+  text-shadow: 3px 3px black;
+}
+
+h3{
+  border: 2px solid white;
+  width: 500px;
+  margin: -12px 2px 40px 50px;
+  background: rgb(26, 88, 188);
+  padding: 4px;
+  border-radius: 1pc;
+}
+
+
+#screen{
+  border: 2px solid white;
+  margin: 20px 0px 2px 50px;
+  height: 600px;
+  width: 500px;
+  background-image: url('http://www.powerpointhintergrund.com/uploads/2017/08/football-field-background-related-keywords--suggestions-football--9.jpeg');
+  background-size: cover;
+}
+#home-score{
+  margin: 1px 1px 1px 1px;
+  width: 50px;
+  height: 62px;
+  font-size: 1em;
+  color: red;
+}
+
+#away-score{
+  margin: 1px 1px 1px 1px;
+  width: 50px;
+  height: 62px;
+  font-size: 1em;
+  color: red;
+}
+
+.running-player{
+  height: 300px;
+  width: 300px;
+  margin: -288px -53px 2px 2px;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
+#quarter-gc{
+  border: 1px solid black;
+  background: black;
+  height: 58px;
+  width: 35px;
+  color: black;
+  margin: -115px -8px -14px 162px;
+}
+.raylewis{
+  height:150px;
+  width:150px;
+  margin: 95px 125px 207px 240px;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
