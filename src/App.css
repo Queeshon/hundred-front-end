@@ -61,7 +61,6 @@ button{
 button:hover{
     background-color: blue; /* Green */
     color: white;
-    width: 200px;
 }
 
 button:active {

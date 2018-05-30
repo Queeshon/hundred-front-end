@@ -1,18 +1,14 @@
 import React, {Component} from 'react'
 import Question from './Question'
-import { Route, Link, NavLink, Switch, BrowserRouter } from 'react-router-dom'
+import { Route, Link, NavLink, Switch} from 'react-router-dom'
 import './gameboard.css'
 
 export default class GameBoard extends Component {
 
   state = {
     players: [],
-    currentDefensivePlayer: {},
-    questions: []
-  }
-
-  handleQuestionClicked = () => {
-
+    questions: [],
+    question: {}
   }
 
   componentDidMount() {
@@ -33,21 +29,22 @@ export default class GameBoard extends Component {
   }
 
   renderQuestion = (renderProps) => {
-    const questionId = renderProps.match.params.spiceId
-    const questionInstance = this.state.questions.find((question) => question.id === questionId)
+    const questionId = renderProps.match.params.id
+    const questionInstance = this.state.questions.find((question) => question.id == questionId)
+    console.log(renderProps)
     if (questionInstance) {
       return <Question questionInstance={questionInstance} />
+    } else {
+      return <div></div>
     }
   }
 
   render() {
-
     const questionLinks = this.state.questions.map((question) =>
       <NavLink activeClassName="active" to={ "/question/" + question.id }>
-        {question.id}
+        <button>{question.id}</button>
       </NavLink>
     )
-
     console.log(this.state.questions);
     return (
       <div className='game-layout'>
@@ -65,8 +62,8 @@ export default class GameBoard extends Component {
           <img src={require('./player.png')} className="animated infinite shake running-player" alt="player" />
           <div id='running-field'></div>
         </div>
-        <button id="0" onClick={this.handleQuestionClicked}>Start Questions</button>
-        
+        {questionLinks}
+        <Route path="/question/:id" exact render={this.renderQuestion}/>
       </div>
     )
   }

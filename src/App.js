@@ -10,7 +10,6 @@ class App extends Component {
 state = {
   loginClicked: false,
   gameClicked: false,
-  profileClicked: false,
 }
 
 handleGameClicked = () => {
@@ -37,26 +36,11 @@ handleGameClicked = () => {
     }
   }
 
-  handleProfileClicked = () => {
-    if(!this.state.loginClicked){
-      this.setState({
-      profileClicked: true
-      })
-    }else{
-      this.setState({
-      profileClicked: false
-      })
-    }
-  }
-
-
   render() {
     if (this.state.gameClicked){
       return (<GameBoard/>)
     }else if (this.state.loginClicked){
       return (<Login/>)
-    }else if (this.state.profileClicked){
-      return (<Profile/>)
     }else{
       return(
       <div className="App">

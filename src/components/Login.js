@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Profile from './Profile'
 import './login.css'
 
 
@@ -6,7 +7,8 @@ export default class Login extends Component {
 
    state = {
      username: "",
-     password: ""
+     password: "",
+     profileClicked: false
    }
 
    onChangeUserHandler = (event) => {
@@ -21,27 +23,40 @@ export default class Login extends Component {
      })
    }
 
-onSubmitHandler = (event) => {
-  event.preventDefault();
-   fetch('http://localhost:5000/api/v1/users', {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json',
-       
-     },
-     body: {
-       'username': this.state.username,
-       'password': this.state.password
-     }
 
-   })
-   .then(resp => resp.json())
-   .then(user => console.log(user))
- }
+   handleProfileClicked = () => {
+     if(!this.state.profileClicked){
+       this.setState({
+       profileClicked: true
+       })
+     }else{
+       this.setState({
+       profileClicked: false
+       })
+     }
+   }
+
+  onSubmitHandler = (event) => {
+    event.preventDefault();
+     fetch('http://localhost:5000/api/v1/users/', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify({
+         'username': this.state.username,
+         'password': this.state.password
+       })
+
+     })
+     .then(resp => resp.json())
+     .then(user => {
+       return <Profile username={this.state.username}/>
+     })
+   }
 
 
   render() {
-    console.log(this.state.username)
     return (
 
       <div className='login-layout'>
