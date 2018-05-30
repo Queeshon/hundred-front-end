@@ -31,7 +31,6 @@ export default class GameBoard extends Component {
   renderQuestion = (renderProps) => {
     const questionId = renderProps.match.params.id
     const questionInstance = this.state.questions.find((question) => question.id == questionId)
-    console.log(renderProps)
     if (questionInstance) {
       return <Question questionInstance={questionInstance} />
     } else {
@@ -45,7 +44,6 @@ export default class GameBoard extends Component {
         <button>{question.id}</button>
       </NavLink>
     )
-    console.log(this.state.questions);
     return (
       <div className='game-layout'>
         <h1>Hundred</h1>

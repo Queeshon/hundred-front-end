@@ -56,7 +56,6 @@ handleGameClicked = () => {
            </p>
            <button onClick={this.handleLoginClicked}>Sign-Up</button>
            <button onClick={this.handleGameClicked}>Start Running!</button>
-           <button onClick={this.handleProfileClicked}>Profile</button>
         </div>
 
       </div>

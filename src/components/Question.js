@@ -12,36 +12,58 @@ export default class Question extends Component {
     })
   }
 
-  handleQuestion = () => {
+  handleQuestion = (event) => {
+    event.preventDefault()
+    var modal = document.getElementById('myModal')
+    modal.style.display = "block"
+
     if (this.props.questionInstance.answer === this.state.answer) {
-      return (
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Correct!</p>
-          </div>
-        </div>
-      )
+      var correct = document.getElementById('correct?')
+      var btn = document.getElementById("myBtn")
+
+      correct.innerText = "Correct!"
+
+      window.onClick = function(event) {
+          if (event.target !== modal) {
+              modal.style.display = "none";
+          }
+      }
     } else {
-      return (
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Try again, loser.</p>
-          </div>
-        </div>
-      )
+      var correct = document.getElementById('correct?')
+      var btn = document.getElementById("myBtn")
+
+      correct.innerText = "Try again."
+
+      window.onClick = function(event) {
+        if (event.target !== modal) {
+            modal.style.display = "none";
+        }
+      }
     }
+  }
+
+  closeModal = () => {
+    var modal = document.getElementById('myModal')
+    modal.style.display = "none"
   }
 
   render() {
     const questionInstance = this.props.questionInstance
+
     return (
-      <form onSubmit={this.handleQuestion}>
-        <h1>{questionInstance.question}</h1>
-        <input className="form-data" type="text" placeholder="enter answer" value={this.state.answer} onChange={this.onChangeAnswerHandler} />
-        <input type="submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleQuestion}>
+          <h1>{questionInstance.question}</h1>
+          <input className="form-data" type="text" placeholder="enter answer" value={this.state.answer} onChange={this.onChangeAnswerHandler} />
+          <input type="submit"/>
+        </form>
+        <div id="myModal" className="modal">
+          <div className="modal-content">
+            <p id="close" className="close" onClick={this.closeModal}>X</p>
+            <h2 id="correct?"></h2>
+          </div>
+        </div>
+      </div>
     )
   }
 

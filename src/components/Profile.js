@@ -13,7 +13,6 @@ export default class Profile extends Component {
     //    },
     //    body: JSON.stringify({
     //      'username': this.state.username,
-    //      'password': this.state.password
     //    })
     //
     //  })

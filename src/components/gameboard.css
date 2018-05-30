@@ -7,7 +7,6 @@
   height: 830px;
   width: 600px;
   border-radius: 2pc;
-  text-shadow: 4px 4px black;
 }
 
 #scoreboard{
@@ -41,7 +40,6 @@ h1{
   margin: 2% auto;
   border-radius: 2pc;
   background: rgb(26, 88, 188);
-  text-shadow: 3px 3px black;
 }
 
 h3{
